@@ -1,0 +1,541 @@
+Script started on 2022-09-27 01:05:41-04:00
+
+
+Write an alias called "l" for "ls -latr" to display the files in the current directory in list formatand reverse chronologically-ordered as a short name.
+Write an alias called "w" for "ls -la | wc" to display the number of files in the current directory as a short name. Put these aliases in your .bashrc file, so they will be re-used everytime you login in the future.
+
+
+[vivian@sjsu ~]$ vi ~/.bashrc
+
+# User specific aliases and functions
+alias l='ls -latr'
+
+alias w='ls-la | wc'
+
+[vivian@sjsu ~]$ . ~/.bashrc
+
+[vivian@sjsu ~]$ l
+[vivian@sjsu ~]$ w
+
+
+
+Create a directory CUSTOMERS and a directory PRODUCTS with mkdir.
+
+[vivian@sjsu ~]$ mkdir CUSTOMERS 
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ mkdir PRODUCTS
+[vivian@sjsu ~]$ 
+
+
+
+Pick 3 different customer IDs. Redirect the helpfulness scores for each customer ID to a file named CUSTOMERS/customerID.txt (replace customerID with the customer ID of the customer you chose).
+
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ touch customerIDs_3.txt
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ vi customerIDs_3.txt 
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ cat customerIDs_3.txt 
+
+51167656 
+44731853 
+31821274
+
+[vivian@sjsu ~]$ for i in `cat customerIDs_3.txt`; do echo $i ; grep $i amazon_reviews_us_Books_v1_02.tsv | wc -l ; done
+
+51167656
+258
+44731853
+97
+31821274
+7
+
+
+[vivian@sjsu ~]$ cat CUSTOMERS/customerIDs_3.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+
+bash -c grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt 44731853 
+2
+6
+3
+4
+23
+5
+4
+10
+3
+2
+8
+13
+6
+8
+62
+22
+0
+7
+3
+58
+2
+2
+20
+2
+14
+0
+6
+3
+1
+17
+40
+49
+15
+18
+6
+1
+2
+3
+0
+4
+20
+8
+1
+4
+14
+22
+3
+26
+3
+16
+17
+68
+3
+60
+40
+2
+6
+10
+13
+20
+5
+11
+0
+2
+9
+1
+4
+99
+4
+7
+12
+14
+3
+11
+11
+9
+3
+10
+4
+1
+3
+4
+8
+4
+2
+11
+4
+2
+2
+4
+3
+22
+9
+18
+2
+2
+0
+bash -c grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt 31821274 
+1
+8
+18
+5
+1
+3
+2
+bash -c grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt 51167656 
+1
+6
+23
+4
+0
+6
+7
+4
+7
+5
+2
+2
+7
+2
+10
+0
+49
+14
+1
+3
+8
+3
+7
+1
+5
+10
+3
+15
+5
+2
+4
+4
+3
+3
+5
+7
+17
+51
+2
+3
+8
+14
+68
+2
+1
+1
+4
+7
+0
+3
+2
+1
+0
+2
+7
+2
+8
+45
+1
+4
+8
+2
+24
+3
+3
+7
+21
+0
+3
+16
+8
+2
+36
+82
+2
+16
+5
+10
+2
+4
+80
+23
+26
+8
+9
+36
+2
+8
+2
+12
+66
+31
+63
+29
+11
+30
+34
+18
+9
+99
+2
+47
+60
+6
+3
+62
+5
+2
+7
+0
+193
+21
+4
+6
+5
+12
+4
+92
+3
+137
+43
+4
+77
+7
+30
+104
+100
+22
+10
+3
+11
+11
+18
+31
+4
+89
+18
+5
+2
+125
+7
+17
+8
+8
+4
+3
+4
+25
+28
+31
+10
+22
+4
+27
+13
+10
+21
+34
+10
+25
+6
+5
+31
+20
+3
+19
+5
+64
+5
+9
+17
+125
+13
+5
+7
+0
+25
+13
+3
+12
+3
+2
+3
+133
+13
+23
+6
+38
+4
+5
+14
+9
+4
+3
+25
+16
+27
+14
+15
+6
+7
+4
+2
+9
+25
+18
+8
+12
+4
+10
+11
+4
+3
+7
+39
+39
+3
+2
+20
+40
+7
+7
+4
+17
+4
+100
+5
+24
+32
+20
+5
+6
+10
+5
+70
+10
+6
+9
+6
+27
+6
+1
+7
+24
+8
+11
+25
+7
+4
+15
+25
+19
+4
+2
+70
+1
+3
+13
+
+
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ mv CUSTOMERS/customerIDs_3.txt .
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ l CUSTOMERS/
+total 24
+-rw-rw-r--  1 vivian vivian   229 Sep 27 01:34 44731853.txt
+-rw-rw-r--  1 vivian vivian    15 Sep 27 01:34 31821274.txt
+-rw-rw-r--  1 vivian vivian   637 Sep 27 01:34 51167656.txt
+drwx------ 12 vivian vivian 28672 Sep 27 01:38 ..
+drwxrwxr-x  2 vivian vivian    66 Sep 27 01:38 .
+
+
+Compute the mean (average) of the list of helpfulness values in each of the 6 files you created above. You may use bc or anything else you like for this. Search online how to use bc for means (averages).
+ 
+[vivian@sjsu ~]$ for i in `ls CUSTOMERS/*txt`; do echo $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END{print sum/count}' $i; done 
+
+CUSTOMERS/31821274.txt
+5.42857
+
+CUSTOMERS/44731853.txt
+11.6495
+
+CUSTOMERS/51167656.txt
+18.1124
+
+
+
+
+Pick 3 different product IDs. Redirect the helpfulness scores for each product ID to a file named PRODUCTS/productID.txt (replace productID with the product ID of the product you chose).
+
+
+[vivian@sjsu ~]$ cat random-3_productIDs.txt 
+
+076450861X
+0743485068
+0842372342
+
+
+[vivian@sjsu ~]$ for i in `cat  PRODUCTS/*txt` ; do  grep $i amazon_reviews_us_Books_v1_02.tsv| wc -l ; done
+5     
+10    
+2     
+
+[vivian@sjsu ~]$ cat PRODUCTS/random-3_productIDs.txt 
+
+076450861X
+0743485068
+0842372342
+
+[vivian@sjsu ~]$ 
+
+[vivian@sjsu ~]$ cat PRODUCTS/random-3_productIDs.txt | xargs -t -L 1 bash -c 'grep $0 amazon_reviews_us_Books_v1_02.tsv | cut -f9 | tee PRODUCTS/$0.txt'
+bash -c grep $0 amazon_reviews_us_Books_v1_02.tsv | cut -f9 | tee PRODUCTS/$0.txt 076450861X 
+9
+5
+54
+6
+15
+bash -c grep $0 amazon_reviews_us_Books_v1_02.tsv | cut -f9 | tee PRODUCTS/$0.txt 0743485068 
+2
+56
+5
+12
+10
+9
+4
+9
+23
+23
+bash -c grep $0 amazon_reviews_us_Books_v1_02.tsv | cut -f9 | tee PRODUCTS/$0.txt 0842372342 
+2
+4
+
+
+[vivian@sjsu ~]$ l PRODUCTS
+total 28
+-rw-rw-r--  1 vivian vivian    33 Sep 26 17:45 random-3_productIDs.txt
+drwx------ 12 vivian vivian 28672 Sep 27 01:47 ..
+-rw-rw-r--  1 vivian vivian    12 Sep 27 01:54 076450861X.txt
+-rw-rw-r--  1 vivian vivian    25 Sep 27 01:54 0743485068.txt
+drwxrwxr-x  2 vivian vivian   103 Sep 27 01:54 .
+-rw-rw-r--  1 vivian vivian     4 Sep 27 01:54 0842372342.txt
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ cat PRODUCTS/076450861X.txt
+9
+5
+54
+6
+15
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ 
+[vivian@sjsu ~]$ mv PRODUCTS/random-3_productIDs.txt .
+[vivian@sjsu ~]$ 
+[
+
+
+Compute the mean (average) of the list of helpfulness values in each of the 6 files you created above. You may use bc or anything else you like for this. Search online how to use bc for means (averages).
+
+[vivian@sjsu ~]$ for i in `ls PRODUCTS/*txt`; do echo $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END{print sum/count}' $i; done 
+
+PRODUCTS/0743485068.txt
+15.3
+
+PRODUCTS/076450861X.txt
+17.8
+
+PRODUCTS/0842372342.txt
+3
+
+[vivian@sjsu ~]$ exit
+exit
+
+Script done on 2022-09-27 02:04:01-04:00
+
+
+

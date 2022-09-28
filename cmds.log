@@ -1,0 +1,1000 @@
+   55  touch file -$(date -i)
+   56  touch file -$(date -I)
+   57  ./runme
+   58  ~/runme
+   59  ps aux | grep launchd
+   60  ps aux | head
+   61  ps aux | grep init
+   62  grep -winrl 3972812140  | wc
+   63  ps -a -f -x | grep launchd
+   64  ps -eo pid | less
+   65  ps -eo ppid | less
+   66  ps -eo cmd | less
+   67  echo $?
+   68  echo $EVN
+   69  print evn | less
+   70  ls -ltr
+   71  cd A2
+   72  ls -ltr
+   73  mkdir A2_backup_ok_delete
+   74  ls -ltr
+   75  mv col* A2_backup_ok_delete
+   76  ls -ltr
+   77  mv patt* A2_backup_ok_delete
+   78  ls -ltr
+   79  mv users* A2_backup_ok_delete
+   80  ls -ltr
+   81  mv retwee* A2_backup_ok_delete
+   82  ls -ltr
+   83  mv sorted_pattern2.txt A2_backup_ok_delete
+   84  mv regex_retweeted_id.txt A2_backup_ok_delete
+   85  mv field5_retweeted.txt A2_backup_ok_delete
+   86  mv regex_replaced.txt A2_backup_ok_delete
+   87  mv top_retweeted.txt A2_backup_ok_delete
+   88  mv test_pattern.txt 
+   89  rm test_pattern.txt 
+   90  ls -ltr
+   91  mv original_author.txt A2_backup_ok_delete
+   92  ls -ltr
+   93  head downloaded_tweets_extend_original_formatted.tsv
+   94  head -n 10downloaded_tweets_extend_original_formatted.tsv
+   95  head -n 10 downloaded_tweets_extend_original_formatted.tsv
+   96  head -n 100 downloaded_tweets_extend_original_formatted.tsv
+   97  ls -ltr
+   98  cut -f2,6,7 
+   99  cut -f2,6,7 downloaded_tweets_extend_original_formatted.tsv
+  100  cut -f2,6,7 downloaded_tweets_extend_original_formatted.tsv > cut267_originalf.txt
+  101  head cut267_originalf.txt 
+  102  head grep_type-replied_cut267_originalf.txt 
+  103  wc grep_type-replied_cut267_originalf.txt 
+  104   grep "type=replied_to" cut267_originalf.txt > grep_type-replied_cut267_originalf.txt
+  105  wc grep_type-replied_cut267_originalf.txt
+  106  head grep_type-replied_cut267_originalf.txt
+  107  sort grep_type-replied_cut267_originalf.txt| uniq -c | sort -nr | head -n 20
+  108  sort -k 1n grep_type-replied_cut267_originalf.txt| uniq -c | sort -nr | head -n 20
+  109  cut -f1 grep_type-replied_cut267_originalf.txt | sort | uniq -c | sort -nr | head -n 20
+  110  awk -F "\t" '$1 != $3' grep_type-replied_cut267_originalf.txt > notSelfReplied_grep_type-replied_cut267_originalf.txt
+  111  wc notSelfReplied_grep_type-replied_cut267_originalf.txt
+  112  cut -f1 notSelfReplied_grep_type-replied_cut267_originalf.txt | sort | uniq -c | sort -nr | head -n 20
+  113  grep 380648579 downloaded_tweets_extend_original_formatted.tsv | wc
+  114  grep 380648579 downloaded_tweets_extend_original_formatted.tsv | head -n 20
+  115  awk -F "\t" '$1 == $3' grep_type-replied_cut267_originalf.txt | head -n 15
+  116  awk -F "\t" '$1 == $3' cut267_originalf.txt | head -n 15
+  117  grep 1045329516762030080 downloaded_tweets_extend_original_formatted.tsv | head -n 4
+  118  ls -ltr
+  119  cut -f1 grep_type-replied_cut267_originalf.txt | sort | uniq -c | sort -nr | head -n 20
+  120  cut -f3 notSelfReplied_grep_type-replied_cut267_originalf.txt | sort | uniq -c | sort -nr | head -n 20
+  121  cut -f3 grep_type-replied_cut267_originalf.txt | sort | uniq -c | sort -nr | head -n 20
+  122  head downloaded_tweets_extend_formatted.tsv 
+  123  cut -f 2,6,7 downloaded_tweets_extend_formatted.tsv > cut267_retweeted_extendf.txt
+  124  cd A2
+  125  ls -ltr
+  126  cut -f 2,6,7 downloaded_tweets_extend_formatted.tsv > cut267_retweeted_extendf.txt
+  127  head cut267_retweeted_extendf.txt 
+  128  grep "type=retweeted" cut267_retweeted_extendf.txt > grep_type-retweeted_extendf.txt
+  129  head grep_type-retweeted_extendf.txt 
+  130  cut -f1 grep_type-retweeted_extendf.txt | sort | uniq -c |sort -nr | head -n 20
+  131  awk -F "\t" '$1 != $3' grep_type-retweeted_extendf.txt > not-self-tweeted_grep_type-retweeted_extendf.txt
+  132  head not-self-tweeted_grep_type-retweeted_extendf.txt 
+  133  cut -f1 not-self-tweeted_grep_type-retweeted_extendf.txt | sort| uniq -c | sort -nr |head -n 20
+  134  head not-self-tweeted_grep_type-retweeted_extendf.txt | head -n 50
+  135  more not-self-tweeted_grep_type-retweeted_extendf.txt 
+  136  sed 's/..ReferencedTweet id=\([0-9]\+\) type=retweeted]/\1/g' retweeted_filtered.txt > regex_retweeted_id.txt
+  137  sed 's/..ReferencedTweet id=\([0-9]\+\) type=retweeted]/\1/g' grep_type-retweeted_extendf.txt > regex_retweeted_id.txt
+  138  head regex_retweeted_id.txt 
+  139  cut -f2 regex_retweeted_id.txt | wc
+  140  head regex_retweeted_id.txt | wc
+  141  regex_retweeted_id.txt | wc
+  142  wc regex_retweeted_id.txt 
+  143  ls -ltr
+  144  cut -f 2 regex_retweeted_id.txt > pattern1_regex_retweeted_id.txt
+  145  head cut267_originalf.txt 
+  146  grep "type=quoted" cut267_originalf.txt > grep_type-quoted_cut267_originalf.txt
+  147  cut -f1,2,6 downloaded_tweets_extend_original_formatted.tsv > cut126_author_original_formatted.tsv
+  148  grep "type=quoted" cut126_author_original_formatted.tsv > grep_type-quoted_cut126_author_original_formatted.tsv
+  149  head cut126_author_original_formatted.tsv 
+  150  head grep_type-quoted_cut126_author_original_formatted.tsv 
+  151  wc grep_type-quoted_cut126_author_original_formatted.tsv 
+  152  head pattern1_regex_retweeted_id.txt 
+  153  wc pattern1_regex_retweeted_id.txt 
+  154  fgrep pattern1_regex_retweeted_id.txt grep_type-quoted_cut126_author_original_formatted.tsv | wc
+  155  fgrep pattern1_regex_retweeted_id.txt grep_type-quoted_cut126_author_original_formatted.tsv
+  156  fgrep pattern1_regex_retweeted_id.txt grep_type-quoted_cut126_author_original_formatted.tsv > joinpattern1_grepTypeQuoted.txt
+  157  wc joinpattern1_grepTypeQuoted.txt 
+  158  head joinpattern1_grepTypeQuoted.txt 
+  159  sort pattern1_regex_retweeted_id.txt | uniq > sort_uniq_pattern1_regex_retweeted_id.txt
+  160  head sort_uniq_pattern1_regex_retweeted_id.txt 
+  161  wc sort_uniq_pattern1_regex_retweeted_id.txt 
+  162  cut -f1 grep_type-quoted_cut126_author_original_formatted.tsv > pattern2_ID_grep_type-quoted_cut126_author_original_formatted.tsv
+  163  wc pattern2_ID_grep_type-quoted_cut126_author_original_formatted.tsv 
+  164  sort pattern2_ID_grep_type-quoted_cut126_author_original_formatted.tsv | uniq | wc
+  165  fgrep sort_uniq_pattern1_regex_retweeted_id.txt pattern2_ID_grep_type-quoted_cut126_author_original_formatted.tsv > joinP1P2
+  166  head joinP1P2 
+  167  fgrep -f sort_uniq_pattern1_regex_retweeted_id.txt pattern2_ID_grep_type-quoted_cut126_author_original_formatted.tsv > joinP1P2
+  168  head joinP1P2 
+  169  wc joinP1P2
+  170  sort joinP1P2 | uniq -c | sort -nr | head -n 20
+  171  ls -ltr
+  172  fgrep -f sort_uniq_pattern1_regex_retweeted_id.txt grep_type-quoted_cut126_author_original_formatted.tsv > joinP1P2
+  173  head joinP1P2 
+  174  wc joinP1P2 
+  175  cut -f1 joinP1P2 | sort | uniq -c | sort -nr | head -n 20
+  176  ls -ltr
+  177  head regex_retweeted_id.txt 
+  178  cut -f2 regex_retweeted_id.txt | sort | uniq -c | sort -nr | head -n 20
+  179  cut -f2 regex_retweeted_id.txt | sort | uniq -c | sort -nr | head -n 20 > top20_col2_regex_retweeted_id.txt
+  180  more top20_col2_regex_retweeted_id.txt 
+  181  cut -f2 top20_col2_regex_retweeted_id.txt > pattern1_top20_col2_regex_retweeted_id.txt
+  182  more pattern1_top20_col2_regex_retweeted_id.txt 
+  183  cat regex_retweeted_id.txt | sort -k2nr | head -n 20
+  184  cat regex_retweeted_id.txt | sort -k2nr | uniq | head -n 20
+  185  cat regex_retweeted_id.txt | sort -k2nr | uniq -c | head -n 20
+  186  fgrep -f pattern1_top20_col2_regex_retweeted_id.txt  cut126_author_original_formatted.tsv > joinTop20_retweeted.txt
+  187  head joinTop20_retweeted.txt 
+  188  fgrep regex_retweeted_id.txt cut126_author_original_formatted.tsv > join-top20_retweeted.txt
+  189  head join-top20_retweeted.txt 
+  190  rm join-top*
+  191  ls -ltr
+  192  rm joi*
+  193  ls -ltr
+  194  head top20_col2_regex_retweeted_id.txt 
+  195  wc 1497678663046905863
+  196  cut -d"\t" -f2 top20_col2_regex_retweeted_id.txt > pattern1_top20_col2_regex_retweeted_id.txt
+  197  cut -d "\t" -f2 top20_col2_regex_retweeted_id.txt > pattern1_top20_col2_regex_retweeted_id.txt
+  198  cut -c 9- -f2 top20_col2_regex_retweeted_id.txt > pattern1_top20_col2_regex_retweeted_id.txt
+  199  sed 's/^ *[0-9]* //' top20_col2_regex_retweeted_id.txt > pattern1_top20_col2_regex_retweeted_id.txt 
+  200  head pattern1_top20_col2_regex_retweeted_id.txt 
+  201  head join_top20_retweeted_originalAuthor.txt 
+  202  cat join_top20_retweeted_originalAuthor.txt 
+  203  cut -f1,2 downloaded_tweets_extend_original_formatted.tsv > cut12_original_authorID.txt
+  204   cut -f1,2 downloaded_tweets_extend_original_formatted.tsv > cut12_authorID_original_formattedVersion.txt
+  205  fgrep -f pattern1_top20_col2_regex_retweeted_id.txt cut126_author_original_formatted.tsv > join_top20_retweeted_originalAuthor.txt
+  206  fgrep -f pattern1_top20_col2_regex_retweeted_id.txt cut12_authorID_original_formattedVersion.txt > join_top20_retweeted_originalAuthor.txt
+  207  cat join_top20_retweeted_originalAuthor.txt 
+  208  cut -f 2 join_top20_retweeted_originalAuthor.txt | sort | uniq -c | sort -nr 
+  209  head regex_retweeted_id.txt 
+  210  ls -ltr
+  211  cut -f2 regex_retweeted_id.txt > col2_regex_retweeted_id.txt
+  212  fgrep -f col2_regex_retweeted_id.txt cut12_authorID_original_formattedVersion.txt > joinv2_all_retweeted_originalAuthor.txt
+  213  head joinv2_all_retweeted_originalAuthor.txt 
+  214  wc joinv2_all_retweeted_originalAuthor.txt 
+  215  cut -f2 joinv2_all_retweeted_originalAuthor.txt | sort | uniq -c | sort -nr | head -n 20
+  216  ls -ltr
+  217  head -n 20 downloaded_hashtags_extend.csv
+  218  head -n 50 downloaded_tweets_extend_formatted.tsv 
+  219  cut -f 4 downloaded_tweets_extend_formatted.tsv | tr ',' '\n' > cutCol4_hashtags_extend_formatted.txt
+  220  head cutCol4_hashtags_extend_formatted.txt 
+  221  grep . cutCol4_hashtags_extend_formatted.txt > rm_blanklines_cutCol4_hashtags_extend_formatted.txt 
+  222  head rm_blanklines_cutCol4_hashtags_extend_formatted.txt 
+  223  sort rm_blanklines_cutCol4_hashtags_extend_formatted.txt | uniq -c | sort -nr | head -n 20
+  224  head downloaded_tweets_extend_formatted.tsv 
+  225  cut -f 4,6 downloaded_tweets_extend_formatted.tsv > cutCol46_extend_formatted.txt
+  226  head cutCol46_extend_formatted.txt 
+  227  grep "type=retweeted" cutCol46_extend_formatted.txt > grep_type-retweeted_cutCol46_extend_formatted.txt
+  228  head grep_type-retweeted_cutCol46_extend_formatted.txt 
+  229  cut -f1 grep_type-retweeted_cutCol46_extend_formatted.txt | tr ',' '\n' > cutf1_trNewlines_grep_type-retweeted_cutCol46_extend_formatted.txt
+  230  grep . cutf1_trNewlines_grep_type-retweeted_cutCol46_extend_formatted.txt > rmBlanklines_cutf1_trNewlines_grep_type-retweeted_cutCol46_extend_formatted.txt
+  231  head rmBlanklines_cutf1_trNewlines_grep_type-retweeted_cutCol46_extend_formatted.txt 
+  232  sort rmBlanklines_cutf1_trNewlines_grep_type-retweeted_cutCol46_extend_formatted.txt | uniq -c | sort -nr | head -n 20
+  233  grep "type=replied_to" cutCol46_extend_formatted.txt > grep_typeReplied_cutCol46_extend_formatted.txt
+  234  head grep_typeReplied_cutCol46_extend_formatted.txt 
+  235  cut -f1 grep_typeReplied_cutCol46_extend_formatted.txt| tr ',' '\n' | grep . > cutf1_Tr_grepBlines_grep_typeReplied_cutCol46_extend_formatted.txt
+  236  head cutf1_Tr_grepBlines_grep_typeReplied_cutCol46_extend_formatted.txt 
+  237  sort cutf1_Tr_grepBlines_grep_typeReplied_cutCol46_extend_formatted.txt | uniq -c | sort -nr | head -n 20
+  238  grep "type=quoted" downloaded_tweets_extend_formatted.tsv | head -n 4
+  239  grep "type=quoted" cutCol46_extend_formatted.txt | cut -f1 | tr ',' '\n' | grep . > greptypeQuoted_cutf1Tr_grepNoBlines.txt
+  240  head greptypeQuoted_cutf1Tr_grepNoBlines.txt
+  241  sort greptypeQuoted_cutf1Tr_grepNoBlines.txt
+  242  ls -ltr
+  243  sort greptypeQuoted_cutf1Tr_grepNoBlines.txt| uniq -c | sort -nr | head -n 30
+  244  grep "type=quoted" cutCol46_extend_formatted.txt | cut -f1 | tr ',' '\n' | grep .| sort | uniq -c | sort -nr | head -n 30
+  245  ls -ltr
+  246  cd A2
+  247  ls -ltr
+  248  rm A2_backup_ok_delete/
+  249  rm A2_backup_ok_delete
+  250  rmdir A2_backup_ok_delete
+  251  rm -rf A2_backup_ok_delete/
+  252  mv grep_type-quoted_cut126_author_original_formatted.tsv grep_type-quoted_cut126_author_original_formatted.txt
+  253  mkdir A2_test_backup
+  254  mv *.txt A2_test_backup/
+  255  ls -ltr
+  256  awk -F "\t" '{print $2}' pattern2_ID_grep_type-quoted_cut126_author_original_formatted.tsv | head -n 2
+  257  awk -F "\t" '{print $2}' pattern2_ID_grep_type-quoted_cut126_author_original_formatted.tsv > test.txt
+  258  head test.txt
+  259  awk -F "\t" '{print $2}' awk -F "\t" '{print $2}' downloaded_tweets_extend_original_formatted.tsv  | sort | uniq -c | sort -n -r | head -n 4  > test.txt
+  260  head test.txt
+  261  awk -F "\t" '{print $2}' downloaded_tweets_extend_original_formatted.tsv  | sort | uniq -c | sort -n -r | head -n 4  > test.txt
+  262  head test.txt
+  263  mv pattern2_ID_grep_type-quoted_cut126_author_original_formatted.tsv A2_test_backup
+  264  mv cut126_author_original_formatted.tsv A2_test_backup
+  265  ls -ltr
+  266  rm test.txt
+  267  ls -tr
+  268  ls -ltr
+  269  script a2.txt
+  270  head -n 5 downloaded_tweets_extend_original_formatted.tsv
+  271  head -n 50 downloaded_tweets_extend_original_formatted.tsv
+  272  awk -F "
+  273  awk -F "\t" '{print $2}' | grep "type=replied_to" | head -n 4 
+  274  awk -F "\t" '{print $2, $6}' | grep "type=replied_to" | head -n 4 
+  275  awk -F "\t" '{print $2, $6}' | head -n 4 
+  276  6}' | head -n 4 
+  277  ls -ltr 
+  278  awk -F "\t" '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | head -n 4 
+  279  awk -F "\t" '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | head -n 30
+  280  awk -F "\t" '{print $2}' downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | head -n 30
+  281  awk -F "\t" '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | head -n 30
+  282  awk -F "\t" '($6=="replied_to") {print $2}' downloaded_tweets_extend_original_formatted.tsv | head -n 30
+  283  sed 's/^ *[0-9]* //' replied_to.txt | sort | uniq -c | sort -rn | head -n 10
+  284  awk -F "\t" '($6=="replied_to")' '{print $6}' downloaded_tweets_extend_original_formatted.tsv | head -n 30
+  285  awk -F "\t" '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | cut -f1 | head -n 30
+  286  awk -F "\t" '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | cut $2 | head -n 30
+  287  awk -F "\t" '$1 != $3' '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | head -n 30
+  288  awk -F "\t" '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | head -n 30
+  289  awk -F "\t" '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '{print $2}' | head -n 30
+  290  grep "replied_to" downloaded_tweets_extend_original_formatted.tsv | awk -F "\t" '{print $2} | wc
+  291  awk -F "\t" '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | wc
+  292  awk -F "\t" '{print $2, $6}' downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" > replied_to.txt
+  293  head replied_to.txt 
+  294  cut -f2 replied_to.txt | sort | uniq -c | sort -rn | head -n 10 
+  295  cut -f2,6 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '{print $2}' | head -n 4
+  296  cut -f2,6 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '{print $1}' | head -n 4
+  297  cut -f2,6 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '{print $1}' | wc
+  298  cut -f2,6 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '{print $1}' | sort | uniq -c | sort -nr | head -n 10
+  299  cut -f2,6,7 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '($1 != $3) {print $1}' | sort | uniq -c | sort -nr | head -n 10
+  300  cut -f2,6,7 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '{print $3}' | sort | uniq -c | sort -nr | head -n 10
+  301  cut -f2,6,7 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '($3 != $1) {print $3}' | sort | uniq -c | sort -nr | head -n 10
+  302  cut -f2,6,7 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '($1 != $3) {print $3}' | sort | uniq -c | sort -nr | head -n 10
+  303  cd A2
+  304  cut -f2,6 downloaded_tweets_extend_formatted.tsv | grep "type=retweeted" | awk -F "\t" {print $2}' | sort | uniq -c | sort -nr | head -n 10
+  305  cut -f2,6 downloaded_tweets_extend_formatted.tsv | grep "type=retweeted" | cut -f2 | sort | uniq -c | sort -nr | head -n 10
+  306  cut -f2,6 downloaded_tweets_extend_formatted.tsv | grep "type=retweeted" | cut -f1 | sort | uniq -c | sort -nr | head -n 10
+  307  cut -f2,6 downloaded_tweets_extend_formatted.tsv | grep "type=retweeted" | awk -F "\t" {print $2}' | sort | uniq -c | sort -nr | head -n 10
+  308  cut -f2,6 downloaded_tweets_extend_formatted.tsv | grep "type=retweeted" | awk -F "\t" '{print $2}' | sort | uniq -c | sort -nr | head -n 10
+  309  cut -f4 downloaded_tweets_extend_formatted.tsv | tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+  310  cut -f4,6 downloaded_tweets_extend_formatted.tsv | grep "type=retweeted"| cut -f1| tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+  311  cut -f4,6 downloaded_tweets_extend_formatted.tsv | grep "type=replied_to"| cut -f1| tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+  312  cut -f4,6 downloaded_tweets_extend_formatted.tsv | grep "type=quoted"| cut -f1| tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+  313  mkdir A2
+  314  cd A2
+  315  head downloaded_tweets_extend_formatted.tsv
+  316  cd
+  317  cd A2
+  318  head downloaded_tweets_extend_formatted.tsv
+  319  head -n 100 downloaded_tweets_extend_formatted.tsv
+  320  script >> a2.txt
+  321  ls -ltr
+  322  script >> a2.txt
+  323  script -a a2.txt
+  324  cd A2
+  325  mv A2 A2_assignment
+  326  cd ..
+  327  mv A2 A2_assignment
+  328  script -a a2.txt
+  329  ls -ltr
+  330  ls -ltr A2
+  331  rmdir A2
+  332  mv A2_assignment A2
+  333  ls -ltr
+  334  cd A2
+  335  mv ../a2.txt .
+  336  ls -ltr
+  337  vi a2.txt
+  338  cp a2.txt a2_backup.txt
+  339  ls -ltr
+  340  cp a2.txt a2.new.txt
+  341  sed -i "s///g" a1.new.txt
+  342  sed -i "s///g" a2.new.txt
+  343  sed -i "s/^.*//g" a2.new.txt
+  344  sed -i -e 's/\x1b\[[0-9;]*m//g' a2.new.txt
+  345  vi a2.new.txt
+  346  sed -i "s/^.*//g" a2.new.txt
+  347  vi a2.new.txt
+  348  sed -i "s/^.*//g" a2.new.txt
+  349  vi a2.new.txt
+  350  cat a2_backup.txt
+  351  cut -f2,6,7 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | awk -F "\t" '{print $7}' | sort | uniq -c | sort -nr | head -n 10
+  352  cut -f2,6,7 downloaded_tweets_extend_original_formatted.tsv | grep "replied_to" | cut -f3 | sort | uniq -c | sort -nr | head -n 10
+  353  vi a2.txt
+  354  echo "# a2" >> README.md
+  355  git init
+  356  git add README.md
+  357  git add a2.txt
+  358  git status
+  359  git commit -m "Assignment 2 commit"
+  360  git status
+  361  git branch -M main
+  362  git remote add origin https://github.com/ivyle201/a2.git
+  363  git status
+  364  git log
+  365  git push -u origin main
+  366  history > cmds.log
+  367  head cmds.log
+  368  git add cmds.log
+  369  git status
+  370  git commit "cmds.log commit"
+  371  git commit -m "cmds.log commit"
+  372  git push 
+  373  etc/pwd
+  374  etc/passwd
+  375  ps | awk '{print}'
+  376  cat /etc/passwd
+  377  ps | awk '{print $1}'
+  378  ps | awk '{print $2}'
+  379  cat etc/passwd
+  380  cat /etc/passwd
+  381  akw -F ":" '{print $1}' /etc/passwd
+  382  tail -f file
+  383  tail -f ws4.txt
+  384  exit
+  385  ls -ltr
+  386  scrip ws4.txt
+  387  script ws4.txt
+  388  ls typescript
+  389  cd typescript
+  390  rm typescript
+  391  ps aux | grep vivian
+  392  echo $HOME
+  393  echo $SHELL
+  394  $ printenv
+  395  printenv
+  396  ls -ltr
+  397  cd A2
+  398  ls -ltr
+  399  rm a2_backup.txt
+  400  rmdir -rf A1_test_backup
+  401  rmdir -rf A2_test_backup
+  402  rm A2_test_backup/
+  403  rmdir A2_test_backup/
+  404  nano .bashrc
+  405  echo "me"
+  406  pwd
+  407  echo 'pwd'
+  408  echo "pwd"
+  409  echo $HOME
+  410  'pwd'
+  411  echo $HOME
+  412  vi ~/.bashrc
+  413  lll
+  414  vi ~/.bashrc
+  415  . ~/.bashrc
+  416  lll
+  417  vi ~/.bashrc
+  418  . ~/.bashrc
+  419  w
+  420  l
+  421  nano/etc/group
+  422  nano /etc/group
+  423  nano /etc/passwd
+  424  sudo
+  425  su
+  426  head -n 50 amazon_reviews_us_Books_v1_02.tsv 
+  427  script ws4.txt
+  428  mkdir CUSTOMERS
+  429  mkdir PRODUCTS 
+  430  -print0
+  431  cut -f2,9 amazon_reviews_us_Books_v1_02.tsv | awk -F "\t" '{print $1}' | sort -R | tai 
+  432  cut -f2,9 amazon_reviews_us_Books_v1_02.tsv | awk -F "\t" '{print $1}' | sort -R | head -n 3
+  433  cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort -R | head -n 3
+  434  cut -f2 amazon_reviews_us_Books_v1_02.tsv
+  435  cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort -R 
+  436  cut -f2 amazon_reviews_us_Books_v1_02.tsv | shuf | head -n 3
+  437  cut -f2 amazon_reviews_us_Books_v1_02.tsv | head -n 50 | sort -R | head -n 3
+  438  cut -f2 amazon_reviews_us_Books_v1_02.tsv | head -n 1000 | sort -R | head -n 3
+  439  cut -f2 amazon_reviews_us_Books_v1_02.tsv | head -n 1000 | sort -R | head -n 3 > random3.txt
+  440  for i in random3.txt ; do echo "i"; done
+  441  fgrep -f random3.txt '(cut -f2,9 amazon_reviews_us_Books_v1_02.tsv)' 
+  442  fgrep -f random3.txt `(cut -f2,9 amazon_reviews_us_Books_v1_02.tsv)` 
+  443  fgrep -f random3.txt < cut -f2,9 amazon_reviews_us_Books_v1_02.tsv 
+  444  fgrep -f random3.txt < `cut -f2,9 amazon_reviews_us_Books_v1_02.tsv` 
+  445  cut -f2,9 amazon_reviews_us_Books_v1_02.tsv | fgrep -f random3.txt 
+  446  fgrep -f random3.txt | cut -f2,9 amazon_reviews_us_Books_v1_02.tsv 
+  447  cut -f2,9 amazon_reviews_us_Books_v1_02.tsv > cut29_helpScore.txt
+  448  cat amazon_reviews_us_Books_v1_02.tsv | head -n 1000 > newfile.txt
+  449  cut -f 2,9 newfile.txt > cut29newfile.txt
+  450  fgrep -f random3.txt cut29newfile.txt 
+  451  bc random3.txt 
+  452  for i in `ls ../CUSTOMERS/*txt` ; do touch i 
+  453  ls -ltr
+  454  for i in 'ls ..random3.txt'; do cat i; done
+  455  for i in 'ls ..random3.txt'; do touch i; done
+  456  for i in 'ls ..random3.txt'; do {print i}; done
+  457  for i in 'ls ..random3.txt'; do `{print i}`; done
+  458  for i in 'ls ..random3.txt'; do echo i; done
+  459  for i in 'ls ..random3.txt'; do echo $i; done
+  460  fgrep -f random3.txt cut29newfile.txt > outputscore-random3.txt
+  461  cat outputscore-random3.txt 
+  462  for i in random3.txt ; do touch i.txt; done
+  463  for i in $cat(${random3.txt}) ; do touch i.txt; done
+  464  ls random3.txt 
+  465  cat random3.txt 
+  466  for i in `cat random3.txt'; do touch i.txt; done
+  467  do touch i.txt; done
+  468  for in in {1..10}; do touch i.txt; done
+  469  for i in {1..10}; do touch i.txt; done
+  470  for i in `cat random3.txt'; do touch i.txt; done
+  471  for in in {1..10}; do touch i.txt; done
+  472  for in in {1..10}; do echo i; done
+  473  for FILE in $HOME/.bash*; do echo $File; done
+  474  for in in {1..10}; do echo $i; done
+  475  for i in {1..10}; do echo $i; done
+  476  for i in {random3.txt}; do echo $i; done
+  477  for i in $cat({random3.txt}); do echo $i; done
+  478  for i in $(cat{random3.txt}); do echo $i; done
+  479  for i in $(cat{$random3.txt}); do echo $i; done
+  480  for i in < random3.txt; do echo $i; done
+  481  for i in < $random3.txt; do echo $i; done
+  482  for i in {1..10}; do echo $i.txt; done
+  483  for i in < `$random3.txt`; do echo $i.txt; done
+  484  for i in < `random3.txt`; do echo $i.txt; done
+  485  for i in < random3.txt; do echo $i.txt; done
+  486  for i in < $random3.txt; do echo $i.txt; done
+  487  for i in (random3.txt); do echo $i.txt; done
+  488  cat random3.txt | while read x; do echo $x.txt; done
+  489  ls -ltr
+  490  rm i.txt
+  491  rm i
+  492  cat outputscore-random3.txt | while read line; do echo $line; done
+  493  cat outputscore-random3.txt | while read line; do echo $line; do touch $line.txt; done
+  494  cat outputscore-random3.txt | while read line; do echo $line; done touch $line.txt
+  495  cat outputscore-random3.txt | while read line; do echo $line; done > $line.txt
+  496  ls -ltr
+  497  cat line.txt
+  498  cat $line.txt
+  499  rm $line.txt
+  500  for i in $(cat randon3.txt); do echo $i; done
+  501  cat random3.txt
+  502  cat outputscore-random3.txt | while read line; do echo $line; $touch line.txt; done
+  503  cat outputscore-random3.txt | while read line; do echo $line; > line.txt; done
+  504  ls -ltr
+  505  cat line.txt
+  506  rm line.txt
+  507  cat outputscore-random3.txt | xargs echo $0
+  508  xargs
+  509  xargs find *.txt
+  510  xargs find \d*.txt
+  511  xargs find '\d*.txt'
+  512  xargs find [\d]*.txt
+  513  xargs find *.txt
+  514  xargs find ^\d*.txt
+  515  find ^\d*.txt
+  516  find '^\d*.txt'
+  517  find [0-9]+.txt
+  518  xargs find [0-9]+.txt
+  519  find -name "*.txt"
+  520  find -name "[0-9].txt"
+  521  find -name "\d.txt"
+  522  find -p [0-9] "*.txt"
+  523  find [0-9] "*.txt"
+  524  find -name "*\d.txt"
+  525  ls -ltr
+  526  find -name "*\d.txt" .
+  527  xagrs find -name "*\d.txt" .
+  528  xagrs find -name "*\d.txt" 
+  529  cat outputscore-random3.txt | xargs -L 2 bash -c  'echo $0.txt > CUSTOMERS/0.txt'
+  530  cd CUSTOMERS/
+  531  ls -ltr
+  532  rm *.txt
+  533  ls -ltr
+  534  cd ..
+  535  cat outputscore-random3.txt | xargs -L 2 bash -c  'echo $0.txt > CUSTOMERS/0.txt'
+  536  cd CUSTOMERS/
+  537  ls -ltr
+  538  ls
+  539  cat outputscore-random3.txt | xargs -L 2 bash -c  'echo $1.txt > CUSTOMERS/0.txt'
+  540  xargs -L 1 find -name
+  541  xargs -L 1 find *.txt
+  542  rm 0.txt
+  543   
+  544  ls 
+  545  cd ..
+  546  xargs -L 1 find *.txt
+  547  xargs -t find *.txt
+  548  exargs find -n 1 "*.txt" "*.log"
+  549  xargs find -n 1 "*.txt" "*.log"
+  550  xargs -n 1 find "*.txt" "*.log"
+  551  find -name "*.txt" | xargs grep "[0-9]+.txt"
+  552  cat random3.txt | xargs .txt
+  553  cat random3.txt | xargs mkdir
+  554  ls -ltr
+  555  cat random3.txt | xargs CUSTOMERS/$0.txt
+  556  cat random3.txt | xargs echo $0
+  557  cat random3.txt | xargs echo $0.txt
+  558  cat random3.txt | xargs touch $0.txt
+  559  cat random3.txt | xargs -p touch $0.txt
+  560  cat random3.txt | xargs -I % sh -c 'echo%; touch $%.txt'
+  561  cat random3.txt | xargs -I % sh -c 'echo%; touch %.txt'
+  562  cat random3.txt | xargs -I % sh -c 'echo%; mk %.txt'
+  563  cat random3.txt | xargs -I % sh -c 'echo %'
+  564  cat random3.txt | xargs -I % sh -c 'echo %.txt'
+  565  cat outputscore-random3.txt | xargs -I % sh -c 'echo %.txt'
+  566  cat outputscore-random3.txt | xargs -I % sh -c 'echo %0.txt'
+  567  cat outputscore-random3.txt | xargs -I % sh -c 'echo %$0.txt'
+  568  cat outputscore-random3.txt | xargs -I % sh -c 'echo $0.txt'
+  569  cat outputscore-random3.txt | xargs 'echo $0.txt'
+  570  cat outputscore-random3.txt | xargs -L 1 'echo $0.txt'
+  571  cat outputscore-random3.txt | xargs -L 1 bash -c  'echo $0.txt'
+  572  cat outputscore-random3.txt | xargs -L 1 bash -c  'echo $0.txt > CUSTOMERS/0.txt'
+  573  ls -ltr
+  574  cd CUSTOMERS
+  575  ls -ltr
+  576  ls 
+  577  cat 0.txt
+  578  cd ..
+  579  cat outputscore-random3.txt | xargs -L 1 bash -c  'echo $1.txt > CUSTOMERS/$0.txt'
+  580  ls -ltr CUSTOMERS/
+  581  ls -ltr CUSTOMERS/cat .*txt
+  582  ls -ltr CUSTOMERS/cat 53068994.txt
+  583  cd CUSTOMERS
+  584  cat 53068994.txt
+  585  cat 42150499.txt
+  586  xargs find -name "*.txt"
+  587  cd ..
+  588  xargs find -name "*.txt"
+  589  find -name "*.txt" | xargs grep "\d.txt"
+  590  find -name "*.txt" | xargs egrep "\d.txt"
+  591  find -name "*.txt" | egrep "\d.txt"
+  592  find -name "\d.txt"
+  593  find -E -regex "\W.txt"
+  594  find -regex "\W.txt"
+  595  find -name "*.txt" | egrep "\W.txt"
+  596  cat outputscore-random3.txt | xargs -t -L 1 bash -c 'echo $1 > CUSTOMERS/$0.txt'
+  597  cd CUSTOMERS
+  598  ls -ltr
+  599  ls | xargs cat
+  600  cd ..
+  601  cat outputscore-random3.txt | xargs -t -n 1 bash -c 'echo $1 > CUSTOMERS/$0.txt'
+  602  cat *.txt | bc
+  603  cat CUSTOMERS/*.txt | bc
+  604  cat CUSTOMERS/*.txt | xargs bc
+  605  cat CUSTOMERS/*.txt | xargs -L 1 bc
+  606  cat CUSTOMERS/*.txt | xargs -L 3 bc
+  607  cat CUSTOMERS/*.txt | xargs -n 3 bc
+  608  cat CUSTOMERS/*.txt | xargs -L 3
+  609  cat CUSTOMERS/*.txt | xargs -L 1
+  610  cat CUSTOMERS/*.txt | xargs -t -L 1
+  611  cd CUSTOMERS
+  612  cat *.txt
+  613  ls -ltr
+  614  cat 42150499.txt
+  615  rm *.txt
+  616  ls -ltr
+  617  cd ..
+  618  cat outputscore-random3.txt | xargs -t-L 1 bash -c 'echo $1 > CUSTOMERS/$0.txt'
+  619  cat outputscore-random3.txt | xargs -t -L 1 bash -c 'echo $1 > CUSTOMERS/$0.txt'
+  620  cd CUSTOMERS/
+  621  ls -ltr
+  622  cat 53068994.txt
+  623  cat *.txt
+  624  cat *.txt| bc
+  625  cat *.txt| xargs -L 2 | c
+  626  cat *.txt| xargs 
+  627  cat *.txt| xargs `+` | bc
+  628  cat *.txt| xargs 
+  629  awk 'BEGIN{sum=0} {sum=sum+$1} END {print sum}' *.txt
+  630  awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END {print sum/count}' *.txt 
+  631  for i in `ls *txt`; do echo $i; 
+  632  for i in `cat *.txt`; do echo $i; 
+  633  cd ..
+  634  for i in `ls CUSTOMERS/*.txt`; do echo $i; 
+  635  for i in `ls CUSTOMERS/*.txt`; do echo $i; done
+  636  mk echotest.txt
+  637  touch echotest.txt
+  638  vi echotest.txt
+  639  for i in `ls echotest.txt`; do echo $i; done
+  640  for i in `ls echotest.txt`; do cat $i; done
+  641  for i in `ls echotest.txt`; do touch $i.txt; done
+  642  ls -ltr
+  643  cat echotest.txt.txt
+  644  cat echotest.txt
+  645  rm echotest.*
+  646  ls -ltr
+  647  xargs 6571652.txt 3068994.txt | rm
+  648  xargs "6571652.txt" "3068994.txt" | rm
+  649  xargs "6571652.txt" "3068994.txt" | rm .*txt
+  650  mv 
+  651  find . -regextype sed -regex "\d.txt"
+  652  find . -regextype sed -regex "\W.txt"
+  653  find . -regextype sed -regex "[0-9].txt"
+  654  sed -i -e 's/[0-9+]*.txt//g' .
+  655  ls -ltr
+  656  egrep "[0=9]+" *.txt
+  657  egrep "[0=9]+*.txt" .
+  658  egrep "[0=9]+*.txt" ./
+  659  find . -type f -empty
+  660  cat ./cut267_retweeted_extendf.txt
+  661  cat cut267_retweeted_extendf.txt
+  662  ls cut267_retweeted_extendf.txt 
+  663  find ./ -type f -name ".txt"
+  664  find ./ -type f -name "*.txt"
+  665  find /home -name "*.jpg"
+  666  find . -type f -empty
+  667  ls -ltr
+  668  ls -ltr A2
+  669  find . -type f -empty | xargs rm -rf
+  670  find . -type f -empty
+  671  ls -ltr
+  672  find . -name -regex "[0-9]+"
+  673  rmdir 53068994
+  674  rmdir 42150499
+  675  find . -name sed -regex "[0-9]+"
+  676  rmdir 36571652
+  677  ls -ltr
+  678  mv CUSTOMERS CUSTOMERS_BACKUP
+  679   cat CUSTOMERS_BACKUP/
+  680  ls CUSTOMERS_BACKUP
+  681  rm CUSTOMERS
+  682  rm downloaded_tweets_extend_original_nolf.csv
+  683  ls -ltr
+  684  mv PRODUCTS PRODUCT_BACKUP
+  685  ls -ltr
+  686  mv random3.txt CUSTOMERS_BACKUP/
+  687  cat newfile.txt
+  688  ls -ltr
+  689  rm newfile.txt
+  690  mv CUSTOMERS_BACKUP/random3.txt .
+  691  ls -ltr
+  692  rm cut29newfile.txt 
+  693  ls -ltr
+  694  mkdir ws4_backup
+  695  mv CUSTOMERS_BACKUP ws4_backup/
+  696  mv PRODUCT_BACKUP ws4_backup/
+  697  ls -ltr
+  698  .bashrc
+  699  vi ~/.barshrc
+  700  . ~/.bashrc
+  701  .bashrc
+  702  bashrc
+  703  more ws4.txt
+  704  script ws4.txt
+  705  cat ws4.txt
+  706  2R1;95;0c10;rgb:f54f/f54f/f54f11;rgb:0000/0000/00002R1;95;0c10;rgb:f54f/f54f/f54f11;rgb:0000/0000/00002R1;95;0c10;rgb:f54f/f54f/f54f11;rgb:0000/0000/0000
+  707  ~/.bashrc
+  708  nano .bashrc
+  709  vi ~/.bashrc
+  710  script ws4.txt
+  711  vi ~/.bashrc
+  712  . ~/.bashrc
+  713  mkdir CUSTOMERS
+  714  mkdir PRODUCTS
+  715  cut -f2 amazon_reviews_us_Books_v1_02.tsv | head -n 10000 | sort -R | head -n 3 > random-3_custIDs.txt
+  716  cat random-3
+  717  cat random-3_custIDs.txt 
+  718  cat amazon_reviews_us_Books_v1_02.tsv | head -n 5
+  719  script >> w4.txt
+  720  cat w4.txt
+  721  script w4.txt
+  722  cut -f 2,9 amazon_reviews_us_Books_v1_02.tsv | fgrep random-3_custIDs.txt > fgrep_join_custIDs_helpfulVotes.txt
+  723  cut -f 2,9 amazon_reviews_us_Books_v1_02.tsv > cut29_custIDs_helpfulVotes.txt
+  724  cat cut29_custIDs_helpfulVotes.txt 
+  725  fgrep random-3_custIDs.txt cut29_custIDs_helpfulVotes.txt > join_fgrep_custIDs_helpfulVotes.txt
+  726  cat join_fgrep_custIDs_helpfulVotes.txt 
+  727  fgrep -f random-3_custIDs.txt cut29_custIDs_helpfulVotes.txt > join_fgrep_custIDs_helpfulVotes.txt
+  728  cat join_fgrep_custIDs_helpfulVotes.txt 
+  729  cat join_fgrep_custIDs_helpfulVotes.txt | xargs -L 1 bash -c 'echo $1 > CUSTOMERS/$0.txt' 
+  730  cd CUSTOMERS/
+  731  ls -ltr
+  732  cat 42126829.txt
+  733  cd ..
+  734  cut -f 4 amazon_reviews_us_Books_v1_02.tsv | tail -10000 | sort -R | head -n 3 > random_3_productIDs.txt
+  735   cat random_3_productIDs.txt 
+  736  cut -f4 amazon_reviews_us_Books_v1_02.tsv | head -n 10000 | sort -R | head -n 3 > random-3_productIDs.txt
+  737  cat random-3_productIDs.txt 
+  738  fgrep -f random-3_productIDs.txt $(cut -f 4,9 amazon_reviews_us_Books_v1_02.tsv) > test 
+  739  fgrep -f random-3_productIDs.txt $(awk '{print $4 $9}' amazon_reviews_us_Books_v1_02.tsv) > test 
+  740  awk '{print $4 $9}' amazon_reviews_us_Books_v1_02.tsv | head -n 4
+  741  awk -F "\t"  '{print $4 $9}' amazon_reviews_us_Books_v1_02.tsv | head -n 4
+  742  awk -F "\t"  '{print $9}' amazon_reviews_us_Books_v1_02.tsv | head -n 4
+  743  awk -F "\t"  '{print $4, $9}' amazon_reviews_us_Books_v1_02.tsv | head -n 4
+  744  cat amazon_reviews_us_Books_v1_02.tsv | head -n 2
+  745  awk -F "\t"  '{print $4, $9}' amazon_reviews_us_Books_v1_02.tsv > productID_helpfulVotes.txt
+  746  fgrep -f random-3_productIDs.txt productID_helpfulVotes.txt | xargs -L 1 bash -c 'echo$1 > PRODUCTS/$0.txt'
+  747  ls -ltr
+  748  fgrep -f random-3_productIDs.txt productID_helpfulVotes.txt |  xargs -L 1 bash -c 'echo $1 > PRODUCTS/$0.txt' 
+  749  ls -ltr PRODUCTS/
+  750  ls -ltr PRODUCTS/total 12
+  751  -rw-rw-r-- 1 vivian vivian 2 Sep 26 18:07 
+  752  ls -ltr PRODUCTS/0842372342.txt
+  753  cat PRODUCTS/0842372342.txt
+  754  grep -f 4,9 "0842372342" amazon_reviews_us_Books_v1_02.tsv 
+  755  grep  "0842372342" amazon_reviews_us_Books_v1_02.tsv | awk -F "\t" '{print $4, $9}'  
+  756  grep  "0842372342" amazon_reviews_us_Books_v1_02.tsv
+  757  cd 
+  758  cd CUSTOMERS/
+  759  ls -ltr
+  760  cd ..
+  761  grep "42126829" amazon_reviews_us_Books_v1_02.tsv 
+  762  grep "32260154" amazon_reviews_us_Books_v1_02.tsv 
+  763  grep "13506526" amazon_reviews_us_Books_v1_02.tsv 
+  764  ls -ltr
+  765  rm random3.txt
+  766  cat random_3_productIDs.txt 
+  767  rm random_3_productIDs.txt
+  768  cat random-3_productIDs.txt | xagrs -L 1 grep $0 amazon_reviews_us_Books_v1_02.tsv | wc 
+  769  cat random-3_productIDs.txt | xagrs -t -L 1 bash -c  'grep $0 amazon_reviews_us_Books_v1_02.tsv | wc' 
+  770  cat random-3_productIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | wc' 
+  771  cat random-3_productIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 4,9'
+  772  cat random-3_productIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 4,9 | echo $1 > PRODUCTS/$0.txt'
+  773  cat PRODUCTS/076450861X.txt
+  774  cat random-3_productIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 > PRODUCTS/$0.txt'
+  775  cat random-3_productIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee PRODUCTS/$0.txt'
+  776  ls PRODUCTS | awk 'BEGIN{sum=0; count=0} {sum=sum+$0; count++} END{print sum/count}' 
+  777  ls PRODUCTS 
+  778  cat PRODUCTS/*.txt | awk 'BEGIN{sum=0; count=0} {sum=sum+$0; count++} END{print sum/count}' 
+  779  cat 0743485068.tx | awk 'BEGIN{sum=0; count=0} {sum=sum+$0; count++} END{print sum/count}' 
+  780  cat PRODUCTS/0743485068.txt | awk 'BEGIN{sum=0; count=0} {sum=sum+$0; count++} END{print sum/count}' 
+  781  for i in `ls PRODUCTS/*txt' ; do echo $i ; done 
+  782  for i in `ls PRODUCTS/*.txt' ; do echo $i ; done 
+  783  cd PRODUCTS/
+  784  for i in `ls *txt' ; do echo $i ; done 
+  785  for i in `ls *txt` ; do echo $i ; done 
+  786  for i in `ls *txt` ; do echo $i ; done | cat $i | awk 'BEGIN{sum=0; count=0} {sum=sum+$0; count++} END{print sum/count}' 
+  787  for i in `ls *txt` ; do echo $i ; done | for i in $i | awk 'BEGIN{sum=0; count=0} {sum=sum+$0; count++} END{print sum/count}' 
+  788  for i in `ls *txt` ; do echo $i ; done | cat $i
+  789  for i in `ls *txt` ; do echo $i ; done | awk 'BEGIN{sum=0; count=0} {sum=sum+$0; count++} END{print sum/count}' $i
+  790  history | grep BEGIN
+  791  for i in `ls *.txt` ; do awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END {print sum/count}' ; done 
+  792  for i in `ls *.txt` ; cat $i
+  793  for i in `ls *.txt` ; cat $i ; done
+  794  for i in `ls *txt` ; cat $i ; done
+  795  for i in `ls *txt` ; echo $i ; done
+  796  for i in `ls *txt` ; do cat $i ; done
+  797  for i in `ls *txt` ; do echo $1;  cat $i ; done
+  798  for i in `ls *txt` ; do echo $1;  cat $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END {print sum/count}' ; done
+  799  for i in `ls *txt` ; do echo $1; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END {print sum/count}' $i ; done
+  800  for i in `ls *txt` ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END {print sum/count}' $i ; done
+  801  for i in `ls *txt` ; awk do 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END {print sum/count}' $i ; done
+  802  for i in `ls *txt` ; do awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END {print sum/count}' $i ; done
+  803  for i in `ls *txt` ; do echo $i; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END {print sum/count}' $i ; done
+  804  cat random-3_customerIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+  805  cd..
+  806  cd ..
+  807  cat random-3_customerIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+  808  cat random-3_customerIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f2,9 | tee CUSTOMERS/$0.txt'
+  809  cat random-3_custIDs.txt 
+  810  cat random-3_customerIDs.txt | xargs -t -L 1 bash -c  'cut -f2,9 $0 amazon_reviews_us_Books_v1_02.tsv | grep $0 | tee CUSTOMERS/$0.txt'
+  811  cat random-3_customerIDs.txt | xargs -t -L 1 bash -c  'cut -f2,9 amazon_reviews_us_Books_v1_02.tsv | grep $0 | tee CUSTOMERS/$0.txt'
+  812  cat ws4.txt
+  813  2R1;95;0c10;rgb:f54f/f54f/f54f11;rgb:0000/0000/0000
+  814  history | grep tee
+  815  vi ~/.bashrc
+  816  . ~/.bashrc
+  817  exit
+  818  ls -ltr
+  819  cat typescript
+  820  rm typescript
+  821  rm fgrep_join_custIDs_helpfulVotes.txt
+  822  more w4.txt
+  823  ls -ltr
+  824  history | grep tee
+  825  cat random-3_productIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee PRODUCTS/$0.txt'
+  826  cat random-3_custIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+  827  cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | head -n 50
+  828  cut -f2 amazon_reviews_us_Books_v1_02.tsv | head -n 10000| sort | uniq -c | head -n 50
+  829  cut -f2 amazon_reviews_us_Books_v1_02.tsv | head -n 10000| sort | uniq -c | sort -nr | head -n 50
+  830  cat random-3_custIDs.txt 
+  831  vi random-3_custIDs.txt 
+  832  cat random-3_custIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+  833  vi random-3_custIDs.txt 
+  834  cat random-3_custIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+  835  vi random-3_custIDs.txt 
+  836  cat random-3_custIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+  837  cat random-3_custIDs.txt 
+  838  cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -nr | head -n 100
+  839  cut -f2 amazon_reviews_us_Books_v1_02.tsv | sort | uniq -c | sort -nr | head -n 1000
+  840  vi ~/.bashrc
+  841  . ~/.bashrc
+  842  mkdir CUSTOMERS 
+  843  mkdir PRODUCTS
+  844  l
+  845  touch customerIDs_3.txt
+  846  vi customerIDs_3.txt 
+  847  cat customerIDs_3.txt 
+  848  for i in `ls customerIDs_3.txt; do echo $i ; grep $i amamazon_reviews_us_Books_v1_02.tsv | wc -l ; done
+  849  for i in `ls customerIDs_3.txt`; do echo $i ; grep $i amamazon_reviews_us_Books_v1_02.tsv | wc -l ; done
+  850  for i in `ls customerIDs_3.txt`; do echo $i ; grep $i amazon_reviews_us_Books_v1_02.tsv | wc -l ; done
+  851  for i in `cat customerIDs_3.txt`; do echo $i ; grep $i amazon_reviews_us_Books_v1_02.tsv | wc -l ; done
+  852  cat customerIDs_3.txt | xargs -t -L 1 bash -c 'grep $0 amazon_reviews_us_Books_v1_02.tsv | cut -f9 > CUSTOMERS/$0.txt'
+  853  l CUSTOMERS/
+  854  mv customerIDs_3.txt CUSTOMERS/
+  855  cat CUSTOMERS/customerIDs_3.txt 
+  856  cat CUSTOMERS/customerIDs_3.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+  857  cat CUSTOMERS/customerIDs_3.txt 
+  858  l CUSTOMERS/
+  859  history | grep xargs
+  860  cat CUSTOMERS/customerIDs_3.txt | xargs -t -L 1 echo 
+  861  cat CUSTOMERS/customerIDs_3.txt | xargs
+  862  cat CUSTOMERS/customerIDs_3.txt
+  863  cat CUSTOMERS/customerIDs_3.txt | xargs echo
+  864  vi CUSTOMERS/customerIDs_3.txt
+  865  cat CUSTOMERS/customerIDs_3.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+  866  cat CUSTOMERS/customerIDs_3.txt | xargs wc
+  867  cat CUSTOMERS/customerIDs_3.txt | xargs echo
+  868  cat CUSTOMERS/customerIDs_3.txt | xargs -t -L 1 echo
+  869  l CUSTOMERS/customerIDs_3.txt
+  870  l CUSTOMERS/
+  871  cat 44731853.txt
+  872  cat CUSTOMERS/44731853.txt
+  873  mv CUSTOMERS/customerIDs_3.txt .
+  874  l CUSTOMERS/
+  875  for i in `ls CUSTOMERS/*txt`; do echo $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END{sum/count}' $i; done 
+  876  for i in `ls CUSTOMERS/*txt`; do echo $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END{print sum/count}' $i; done 
+  877  cat random-3_productIDs.txt 
+  878  mv random-3_productIDs.txt PRODUCTS
+  879  l
+  880  l PRODUCTS
+  881  for i in `ls PRODUCTS/*txt` | grep $i amazon_reviews_us_Books_v1_02.tsv | wc -l
+  882  for i in `ls PRODUCTS/*txt` ; do  grep $i amazon_reviews_us_Books_v1_02.tsv | wc -l; done
+  883  for i in `ls PRODUCTS/*txt` ; do  grep $i amazon_reviews_us_Books_v1_02.tsv; done
+  884  for i in `cat  PRODUCTS/*txt` ; do  grep $i amazon_reviews_us_Books_v1_02.tsv; done
+  885  for i in `cat  PRODUCTS/*txt` ; do  grep $i amazon_reviews_us_Books_v1_02.tsv| wc ; done
+  886  cat PRODUCTS/random-3_productIDs.txt 
+  887  cat PRODUCTS/random-3_productIDs.txt | xargs -t -L 1 bash -c 'grep $0 amazon_reviews_us_Books_v1_02.tsv | cut -f9 | tee PRODUCTS/$0.txt
+  888  cat PRODUCTS/random-3_productIDs.txt | xargs -t -L 1 bash -c 'grep $0 amazon_reviews_us_Books_v1_02.tsv | cut -f9 | tee PRODUCTS/$0.txt'
+  889  l PRODUCTS
+  890  cat 076450861X.txt
+  891  cat PRODUCTS/076450861X.txt
+  892  mv PRODUCTS/random-3_productIDs.txt .
+  893  for i in `PRODUCTS/*txt` ; do echo $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END{print sum/count}'; done 
+  894  for i in `ls PRODUCTS/*txt` ; do echo $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END{print sum/count}'; done 
+  895  for i in `cat.. PRODUCTS/*txt` ; do echo $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END{print sum/count}'; done 
+  896  for i in `cat PRODUCTS/*txt` ; do echo $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END{print sum/count}'; done 
+  897  for i in `ls PRODUCTS/*txt`; do echo $i ; awk 'BEGIN{sum=0; count=0} {sum=sum+$1; count++} END{print sum/count}' $i; done 
+  898  exit
+  899  cat random-3_customerIDs.txt | xargs -t -L 1 bash -c  'cut -f2,3,9 amazon_reviews_us_Books_v1_02.tsv | grep $0 | tee CUSTOMERS/$0.txt'
+  900  cat random-3_custIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee CUSTOMERS/$0.txt'
+  901  cat random-3_custIDs.txt | xargs -t -L 1 bash -c  'cut -f2,3,9 amazon_reviews_us_Books_v1_02.tsv | grep $0 | tee CUSTOMERS/$0.txt'
+  902  history | grep $0
+  903  hitory | bash -c
+  904  history | bash -c
+  905  history | grep bash -c
+  906  history | grep xargs
+  907  cat random-3_customerIDs.txt | xargs -t -L 1 bash -c  'cut -f2,9 amazon_reviews_us_Books_v1_02.tsv | grep $0 | tee CUSTOMERS/$0.txt'
+  908  cat random-3_custIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee PRODUCTS/$0.txt'
+  909  for i in `ls CUSTOMERS/*txt`; do echo $i; cat $i; done
+  910  cat CUSTOMERS/*.txt
+  911  l CUSTOMERS/*.txt
+  912  rmdir -rf CUSTOMERS/
+  913  rmdir -rf CUSTOMERS
+  914  rmdir CUSTOMERS
+  915  rmdir -rf CUSTOMERS
+  916  history | grep -rf
+  917  history | grep rmdir
+  918  rmdir -rf CUSTOMERS
+  919  l
+  920  rmdir -rf CUSTOMERS
+  921  cd CUSTOMERS/
+  922  l
+  923  rm *.txt
+  924  ls -ltr
+  925  cd ..
+  926  rmdir -rf CUSTOMERS/
+  927  cd CUSTOMERS/
+  928  rm .
+  929  rmdir .
+  930  rmdir ..
+  931  cd ..
+  932  l PRODUCTS/
+  933  l A2
+  934  rmdir -rf CUSTOMERS/
+  935  cat random-3_custIDs.txt | xargs -t -L 1 bash -c  'grep  $0 amazon_reviews_us_Books_v1_02.tsv | cut -f 9 | tee PRODUCTS/$0.txt'
+  936  for i in `ls CUSTOMERS/*txt`; do echo $i; cat $i; done
+  937  l 
+  938  l CUSTOMERS/
+  939  cat random-3_custIDs.txt 
+  940  rm random-3_custIDs.txt random-3_customerIDs.txt
+  941  rm CUSTOMERS/random-3_custIDs.txt CUSTOMERS/random-3_customerIDs.txt
+  942  LS -LTR
+  943  ls -tlr
+  944  rm -rf CUSTOMERS/
+  945  l
+  946  rm w4.txt
+  947  script ws4.txt
+  948  mv PRODUCTS PRODUCTS_backup
+  949  l PRODUCTS_backup
+  950  l
+  951  rm -rf ws4_backup/
+  952  l
+  953  rm ws4.txt
+  954  rm join_fgrep_custIDs_helpfulVotes.txt 
+  955  rm outputscore-random3.txt 
+  956  rm cut29_helpScore.txt 
+  957  l
+  958  script ws4.txt
+  959  cat ws4.txt
+  960  2R1;95;0c10;rgb:f54f/f54f/f54f11;rgb:0000/0000/00002R1;95;0c10;rgb:f54f/f54f/f54f11;rgb:0000/0000/00002R1;95;0c10;rgb:f54f/f54f/f54f11;rgb:0000/0000/0000
+  961  cat ws4.txt
+  962  vi ~/.bashrc
+  963  ps
+  964  ps | awk '{print $1}'
+  965  ps | awk '{print $2}'
+  966  ps | awk '{print $0}'
+  967  ps | awk '{print}'
+  968  cat /etc/passwd
+  969  awk -F ";" '{print $1}' /etc/passwd
+  970  awk -F ":" '{print $1}' /etc/passwd
+  971  ps | awk -F ":" '{print $1 $3 $6}' /etc/passwd
+  972  ps | awk -F ":" '{print $1" "$3" "$6}' /etc/passwd
+  973  ps | awk -F ":" '{print $1"\t "$3"\t "$6}' /etc/passwd
+  974  awk 'BEGIN{FS=":"; OFS="-"} {print $1, $6, $7}' /etc/passwd
+  975  cat /etc/shells
+  976  awk -f "/" '/ ^// {print $NF}' /etc/shells
+  977  awk -F "/" '/ ^\// {print $NF}' /etc/shells
+  978  awk -F "/" '/^\// {print $NF}' /etc/shells
+  979  awk -F "/" '/^\// {print $NF}' /etc/shells | uniq
+  980  df
+  981  df | awk '/\/dev/ {print $1"\t"$2"\t"$3}'
+  982  df | awk '/\/dev\// {print $1"\t"$2"\t"$3}'
+  983  df | awk '/\/dev\// {print $1"\t"$2 + "$3}'
+  984  df | awk '/\/dev\// {print $1"\t"$2 + $3}'
+  985  ps -ef
+  986  ps -ef | awk '{ if($NF=="user") print $0}'
+  987  ps -ef | awk '{ if($NF=="-bash") print $0}'
+  988  awk 'BEGIN{ for(i=1; i>10; i++) print "The square root of", i, "is", i*i;}'
+  989  awk 'BEGIN{ for(i=1; i<=10; i++) print "The square root of", i, "is", i*i;}'
+  990  l
+  991  rm -rf PRODUCTS_backup/
+  992  l
+  993  mkdir worksheet3
+  994  rmdir worksheet3
+  995  mkdir worksheet4
+  996  l
+  997  mv CUSTOMERS worksheet4
+  998  mv PRODUCTS worksheet4
+  999  mv ws4txt worksheet4
+ 1000  mv ws4.txt worksheet4
+ 1001  mv cut29_custIDs_helpfulVotes.txt worksheet4
+ 1002  mv random-3_productIDs.txt worksheet4
+ 1003  mv productID_helpfulVotes.txt worksheet4
+ 1004  mv customerIDs_3.txt worksheet4
+ 1005  mv .new_a1_file.txt.swp A1
+ 1006  mv worksheet4 WORKSHEET4
+ 1007  l WORKSHEET4/
+ 1008  L
+ 1009  l
+ 1010  mv worksheet2 WORKSHEET2
+ 1011  l
+ 1012  cd WORKSHEET4
+ 1013  l
+ 1014  vi ws4.txt
+ 1015  rm ws4.txt
+ 1016  touch w4.txt
+ 1017  rm w4.txt
+ 1018  touch ws4.txt
+ 1019  vi ws4.txt
+ 1020  more ws4.txt
+ 1021  head -n 50 downloaded_tweets_extend_formatted.tsv 
+ 1022  cd ..
+ 1023  l
+ 1024  cd A2
+ 1025  head -n 50 downloaded_tweets_extend_formatted.tsv 
+ 1026  awk -F "\t" '{ ($2 != $7) print $4 }' | sort | uniq -c | sort -nr | head -n 30
+ 1027  awk -F "\t" '{ ($2 != $7), print $4 }' | sort | uniq -c | sort -nr | head -n 30
+ 1028  awk -F "\t" '{ ($2 != $7) print $4 }' downloaded_tweets_extend_formatted.tsv  | sort | uniq -c | sort -nr | head -n 30
+ 1029  awk -F "\t" '{ if ($2 != $7) print $4 }' downloaded_tweets_extend_formatted.tsv  | sort | uniq -c | sort -nr | head -n 30
+ 1030  awk -F "\t" '{ if ($2 != $7) print $4 $6 }' downloaded_tweets_extend_formatted.tsv  | grep "type=retweeted"| cut -f1| tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30 
+ 1031  awk -F "\t" '{ if ($2 == $7) print $4 $6 }' downloaded_tweets_extend_formatted.tsv  | grep "type=retweeted"| cut -f1| tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30 
+ 1032  history | grep cp
+ 1033  history | grep cp /home/
+ 1034  cd ..
+ 1035  history | grep cp /home
+ 1036  history | grep "cp /home"
+ 1037  history | grep cp
+ 1038  history 
+ 1039   history | grep nolf.tsv
+ 1040  cp /home/test/A1downloaded_tweets_extend_nolf2_NOBOT.tsv
+ 1041  cp /home/test/A1downloaded_tweets_extend_nolf2_NOBOT.tsv .
+ 1042   
+ 1043  cp /home/test/A1/downloaded_tweets_extend_nolf2_NOBOT.tsv .
+ 1044  head downloaded_tweets_extend_nolf2_NOBOT.tsv 
+ 1045  cut -f4 downloaded_tweets_extend_nolf2_NOBOT.tsv | tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+ 1046  cut -f4,6 downloaded_tweets_extend_nolf2_NOBOT.tsv | grep "type=retweeted"| cut -f1| tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+ 1047  cut -f4,5 downloaded_tweets_extend_nolf2_NOBOT.tsv | grep "type=retweeted"| cut -f1| tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+ 1048  cut -f4,5 downloaded_tweets_extend_nolf2_NOBOT.tsv | grep "type=replied_to" | cut -f1| tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+ 1049  cut -f4,5 downloaded_tweets_extend_nolf2_NOBOT.tsv | grep "type=quoted" | cut -f1| tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+ 1050   cut -f2,5 downloaded_tweets_extend_formatted.tsv | grep "type=retweeted" | cut -f1 | sort | uniq -c | sort -nr | head -n 10
+ 1051   cut -f2,5 downloaded_tweets_extend_nolf2_NOBOT.tsv | grep "type=retweeted" | cut -f1 | sort | uniq -c | sort -nr | head -n 10
+ 1052  cut -f4 downloaded_tweets_extend_nolf2_NOBOT.tsv | tr ',' '\n' | grep . | sort | uniq -c | sort -nr | head -n 30
+ 1053  cp /home/test/A1/downloaded_tweets_extend_original_nolf2_NOBOT.tsv .
+ 1054  history > cmds.log
